@@ -1,3 +1,5 @@
+"use strict";
+
 console.log(1);
 
 const a = new Promise((resolve, reject) =>
@@ -34,3 +36,7 @@ console.log(5);
 
 TODO: разобрать больше задач с Promise
 */
+
+let aa = (2, 5, 5 - 1) * 2;
+
+console.log("aa=", aa); // 8 = 4*2
