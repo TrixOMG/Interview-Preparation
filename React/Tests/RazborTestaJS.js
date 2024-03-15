@@ -115,6 +115,13 @@ b = [1,2,3];
 
 Ответ: нет (вывод консоли: false (без стрикт мода, с ним выдает ошибку))
 
+Пояснение:
+
+Прямое сравнение массивов всегда будет давать результат false.
+Поскольку массив, как объект, указывает на ссылку памяти, где хранится "значение".
+И эти ссылки всегда будут разными, за исключением случая когда мы сравниваем один
+и тот же объект (массив).
+
 18. Объявлена функция:
 function F() {};
 Чем является F.prototype?
@@ -333,9 +340,97 @@ new Array(1, 2)
 Array(1, 2)
 [1, 2]
 
-45. 
+45. let x = 5; console.log(x++);
+  Ответ: 5, т.к. инкремент происходит после выполнения операции вывода
+
+  ^ - оператор XOR
+
+46. function F() {return F;}
+console.log( new F() instanceof F);
+console.log( new F() instanceof Function);
+
+Оператор instanceof проверяет, принадлежит ли объект к определённому классу.
+Другими словами, object instanceof constructor проверяет,
+присутствует ли объект constructor.prototype в цепочке прототипов object.
+
+47. Что такое ECMAScript?
+Ответ: Спецификация языка JavaScript.
+
+48. Какие из этих вызовов синтаксически верно сгенерируют исключение?
+
+throw "Ошибка" *
+throw new Error("Ошибка") *
+throw { message: "Ошибка" } *
+throw Error("Ошибка") * 
+Ни один.
+
+49. Какой оператор из этих выполняет не только математические операции?
+
+* 
+/
++ //я думаю этот
+-
+>>>
+
+50. console.log([] + false - null + true)
+
+Ответ: NaN
+
+51. Сработает ли вызов функции до объявления в этом коде:
+
+sayHi();
+
+function sayHi() {
+  console.log("Hello")
+}
+
+Ответ: Да
+
+52. Что выведет этот код?
+
+f.call(f);
+
+function f() {
+  alert( this );
+}
+
+Ответ: [Function: F] (Код функции F)
+
+53. Что выведет этот код?
+
+f.call(null);
+
+function f() {
+  alert( this );
+}
+
+Ответ: null 
+
+
+
 */
 
+f.call(null);
+
+function f() {
+  console.log(this);
+}
+
+//sayHi();
+
+//function sayHi() {
+//  console.log("Hello")
+//}
+
+//console.log([] + false - null + true)
+
+//function F() {return F;}
+//console.log( new F() instanceof F);
+//console.log( new F() instanceof Function);
+
+//console.log(2^10);
+
+//let x = 5; console.log(x++);
 // console.log(str); // ?
 // let str = "Hello";
 // let f = (function (x) {
@@ -449,3 +544,5 @@ Array(1, 2)
 // User.prototype = { admin: true };
 
 // console.log(user.admin);
+
+// console.log([] + 1 + 2);
