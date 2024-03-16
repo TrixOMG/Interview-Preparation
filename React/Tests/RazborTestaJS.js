@@ -406,15 +406,65 @@ function f() {
 
 Ответ: null 
 
+54. Есть ли разница:
+!!(a && b)
+(a && b)
 
+Ответ: Да, первый превращает результат условия в логический тип
+
+
+55. Чему равно 0 || 1 && 2 || 3?
+
+Ответ: 2, т.к. у операции И больше приоритет
+
+56. Чему равна суммма [] + 1 + 2
+
+Ответ: 12
+
+57. let obj = {'1': 0, 1: 1, 0: 2};
+
+console.log(obj['1']);
+
+Ответ: 1
+
+58. console.log(true + false)
+
+Ответ: 1
+
+59. let a = new Array(1,2), b = new Array(3);
+console.log(a[0] + b[0])
+
+Ответ: NaN
 
 */
 
-f.call(null);
+// let a = new Array(1, 2),
+//   b = new Array(3);
+// console.log(a[0] + b[0]);
 
-function f() {
-  console.log(this);
-}
+// console.log(true + false);
+// console.log(typeof null);
+
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+// console.log(i);
+
+// console.log([] + 1 + 2);
+
+// console.log(1.15 + 2.3);
+
+// console.log(0 || (1 && 2) || 3);
+
+// let a = 1,
+//   b = 2;
+// console.log(a && b, !!(a && b));
+
+// f.call(null);
+
+// function f() {
+//   console.log(this);
+// }
 
 //sayHi();
 
