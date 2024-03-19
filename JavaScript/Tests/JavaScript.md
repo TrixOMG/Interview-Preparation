@@ -1,117 +1,167 @@
-"use strict";
-
-/*
 1. Язык JavaScript является подвидом языка Java - неверно.
 
 2. Что выведет код:
-let f = function g() { return 23; };
-alert( typeof g() );
+
+```js
+let f = function g() {
+  return 23;
+};
+alert(typeof g());
+```
 
 Ответ: undefined
 
 3. Какой результат выражения:
-console.log(null + {0:1}[0] + [,[1],][1][0]);
+
+```js
+console.log(null + { 0: 1 }[0] + [, [1]][1][0]);
+```
 
 Ответ: 2
 
 4. Что выведет этот код:
-for(let i=0; i<10; i++) {
-  setTimeout(function() {
+
+```js
+for (let i = 0; i < 10; i++) {
+  setTimeout(function () {
     alert(i);
   }, 100);
 }
+```
 
 Ответ: Числа от 0 до 9
 
-5. Какое из этих слов не имеет специального использования в JavaScript, никак не упомянуто в стандарте? 
-this, instanceof, constructor, parent, new, все имеют спец. использование.
+5. Какое из этих слов не имеет специального использования в JavaScript, никак не упомянуто в стандарте?
+   this, instanceof, constructor, new, все имеют спец. использование.
 
 Ответ: parent
 
 6. Чему равно arr.length?
-function MyArray() { }
+
+```js
+function MyArray() {}
 MyArray.prototype = [];
 
 let arr = new MyArray();
 arr.push(1, 2, 3);
 alert(arr.length);
+```
 
 Ответ: 3
 
-7. Что делает код: break me;
+7. Что делает код:
+
+```js
+break me
+```
+
 Ответ: выходит из текущего цикла или switch на метку "me"
 
 8. Какие варианты вызова try..catch являются синтаксически верными в JavaScript?
 
-Ответ: 
-try {} catch {}
-try {} finally {}
-try {} catch {} finally {}
+Ответ:
+
+```js
+try {
+} catch {}
+
+try {
+} finally {
+}
+
+try {
+} catch {
+} finally {
+}
+```
 
 9. Что выведет этот код:
+
+```js
 console.log(str);
 var str = "Hello";
+```
 
 Ответ: undefined
 
 10. Что выведет этот код:
-for(var i=0; i<10; i++) {
-  setTimeout(function() {
+
+```js
+for (var i = 0; i < 10; i++) {
+  setTimeout(function () {
     alert(i);
   }, 100);
 }
+```
 
 Ответ: 10 раз число 10
 
 11. Что выведет этот код:
+
+```js
 let obj = {
- "0": 1,
- 0: 2
+  0: 1,
+  0: 2,
 };
-console.log( obj["0"] + obj[0] );
+console.log(obj["0"] + obj[0]);
+```
 
 Ответ: 4
 
 12. Какие варианты подключения скрипта являются корректными с точки зрения современного стандарта HTML?
 
+Ответ:
 
-Неверно:
 <script type="text/javascript" src="my.js"></script>
 <script src="my.js"></script>
-<script src="my.js"/>
-TODO: проверить???
 
 13. Что выведет этот код?
-function User() { }
+
+```js
+function User() {}
 User.prototype = { admin: false };
 
 let user = new User();
 alert(user.admin);
+```
 
 Ответ: false
 
 14. Чему равно a + b + c?
+
+```js
 let a = 1;
-let b = {toString() {return "1"}};
+let b = {
+  toString() {
+    return "1";
+  },
+};
 let c = 1;
+```
 
 Ответ: 111
 
 15. Что делает оператор **?
-Ответ: ** - оператор возведения в степень
+    Ответ: ** - оператор возведения в степень
 
 16. Какие из этих вариантов задают массив из элементов «a», «b»?
-let a = new Array("a","b") *
-let a = { "a", "b" }
-let a = ( "a", "b" )
-let a = [ "a", "b" ] *
-let a = "a,b".split(",") *
+
+```js
+    let a = new Array("a","b") _
+    let a = { "a", "b" }
+    let a = ( "a", "b" )
+    let a = [ "a", "b" ] _
+    let a = "a,b".split(",") \*
+```
 
 Ответ: помеченные звездочкой
 
 17. Правда ли что a == b?
-a = [1,2,3];
-b = [1,2,3];
+
+```js
+a = [1, 2, 3];
+b = [1, 2, 3];
+```
 
 Ответ: нет (вывод консоли: false (без стрикт мода, с ним выдает ошибку))
 
@@ -123,8 +173,11 @@ b = [1,2,3];
 и тот же объект (массив).
 
 18. Объявлена функция:
-function F() {};
-Чем является F.prototype?
+
+```js
+    function F() {};
+    Чем является F.prototype?
+```
 
 Ответ: Обычным объектом.
 
@@ -133,7 +186,9 @@ function F() {};
 Ответ: Да, вывод консоли: true
 
 20. Что выведет этот код?
-function User() { }
+
+```js
+function User() {}
 User.prototype = { admin: false };
 
 let user = new User();
@@ -141,18 +196,24 @@ let user = new User();
 User.prototype = { admin: true };
 
 alert(user.admin);
+```
 
 Ответ: false
 
-
 21. Что выведет этот код?
+
+```js
 let x = 5;
-console.log(x++)
+console.log(x++);
+```
 
 Ответ: 5
 
 22. Что выведет этот код?
-0 || "" || 2 || undefined || true || falsе
+
+```js
+0 || "" || 2 || undefined || true || falsе;
+```
 
 Ответ: 2
 
@@ -165,13 +226,17 @@ console.log(x++)
 Аргументом метода toString является radix,
 по сути это перевод числа в другую систему счисления в диапазоне от 2 до 36.
 
-20e-1 = 20 * 10 ** -1 = 2
+20e-1 = 20 \* 10 \*\* -1 = 2
 
 Ответ: 10
 
 25. Что выведет код? (вопрос с подвохом)
-let a = [1,2]
-(function() { alert(a) })()
+
+```js
+let a = [1, 2](function () {
+  alert(a);
+})();
+```
 
 Ответ: Будет ошибка
 
@@ -181,7 +246,10 @@ let a = [1,2]
 Если точка с запятой будет стоять (где a), то ошибки не будет.
 
 26. Что выведет этот код?
-console.log(+"Infinity")
+
+```js
+console.log(+"Infinity");
+```
 
 Ответ: Infinity (как число)
 
@@ -190,14 +258,17 @@ console.log(+"Infinity")
 Деление на 0 даёт число Infinity
 Умножение числа на строку даёт число, ошибки нет
 Корень из отрицательного числа даёт ошибку, только если возводить в отрицательную степень
-через оператор **, при помощи Math.sqrt() выдаёт NaN, ошибки нет.
+через оператор \*\*, при помощи Math.sqrt() выдаёт NaN, ошибки нет.
 
 Ответ: Никакая из перечисленных.
 
-28. 
-let arr = [1,2,3];
+28.:
+
+```js
+let arr = [1, 2, 3];
 arr.something = 5;
 console.log(arr.something);
+```
 
 Ответ: 5
 
@@ -209,32 +280,48 @@ console.log(arr.something);
 
 Ответ: Разные
 
-31.
+31.:
+
+```js
 function f() {
   let a = 5;
-  return new Function('b', 'return a + b');
+  return new Function("b", "return a + b");
 }
-console.log( f()(1) );
+console.log(f()(1));
+```
 
 Ответ: Будет ошибка
 
 32. Чему равно значение выражения 4 - "5" + 0xf - "1e1"?
+
+0xf = 15
+1e1 = 10
+
+4 - 5 + 15 - 10 = 4
 
 Ответ: Числу (4)
 
 33. Какие варианты правильно объявляют функцию f, возвращающую сумму двух аргументов?
 
 Ответ:
-let f = function(a,b) { return a+b }
-let f = new Function("a,b", "return a+b")
-let f = new Function("a", "b", "return a+b")
-let f = (a, b) => a + b
 
-34.
+```js
+let f = function (a, b) {
+  return a + b;
+};
+let f = new Function("a,b", "return a+b");
+let f = new Function("a", "b", "return a+b");
+let f = (a, b) => a + b;
+```
+
+34.:
+
+```js
 "use strict";
 
 a = null + undefined;
-alert(a);
+console.log(a);
+```
 
 Ответ: в коде ошибка, без use strict - NaN
 
@@ -249,7 +336,6 @@ alert(a);
 
 Алгоритм сравнения двух строк:
 
-
 1.Сначала сравниваются первые символы строк.
 
 2.Если первый символ первой строки больше (меньше), чем первый символ второй,
@@ -262,47 +348,59 @@ alert(a);
 5.Если обе строки заканчиваются одновременно, то они равны.
 Иначе, большей считается более длинная строка.
 
-
 Заглавная буква "A" не равна строчной "a". Какая же из них больше? Строчная "a".
-Почему? Потому что строчные буквы имеют больший код во внутренней таблице кодирования, 
-которую использует JavaScript (Unicode). 
+Почему? Потому что строчные буквы имеют больший код во внутренней таблице кодирования,
+которую использует JavaScript (Unicode).
 
-36. 
+36.:
+
+```js
 console.log(str); // ?
 let str = "Hello";
+```
 
 Ответ: Выдаст ошибку.
 
 37. Каких операторов нет в JavaScript?
 
-* //есть
-^ //есть
-% //есть
-# // нет, остальные есть
+\- есть
+^ есть
+% есть
+\# нет, остальные есть
 &
->>
->>>
-!
+\> \> \>
+\!
 
 Ответ: #
 
 38. Какой код корректно найдёт максимальное значение в непустом массиве arr?
 
 Ответ:
-arr.reduce(function(prev, item) { return Math.max(prev, item) })
-Math.max.apply(null, arr)
 
-39. 
-if (function f(){}) {
+```js
+arr.reduce(function (prev, item) {
+  return Math.max(prev, item);
+});
+Math.max.apply(null, arr);
+```
+
+39.:
+
+```js
+if (function f() {}) {
   alert(typeof f);
 }
+```
 
 Ответ: undefined
 
-40.
+40.:
+
+```js
 let arr = [];
 arr[1] = 1;
 arr[3] = 33;
+```
 
 Ответ: arr.length = 4
 
@@ -311,107 +409,136 @@ arr[3] = 33;
 Ответ: Три for, while, do-while
 
 42. Чему равен this?
+
+```js
 let user = {
-  sayHi: function() {
+  sayHi: function () {
     alert(this);
-  }
+  },
 };
 (user.sayBye = user.sayHi)();
+```
 
 Ответ: undefined
 
 43. Что выведет код:
-let f = function(x) {
-  alert(x)
-}
 
-(function() {
-  f(1)
-}())
+```js
+let f = (function (x) {
+  alert(x);
+})(
+  (function () {
+    f(1);
+  })()
+);
+```
 
 Ответ: Ошибку
 
 44. Выберите правильные варианты объявления массива, то есть такие,
-в результате которых мы получаем массив из двух чисел 1 и 2.
+    в результате которых мы получаем массив из двух чисел 1 и 2.
 
 Ответ:
-new Array.prototype.constructor(1, 2)
-new Array(1, 2)
-Array(1, 2)
-[1, 2]
 
-45. let x = 5; console.log(x++);
-  Ответ: 5, т.к. инкремент происходит после выполнения операции вывода
+```js
+new Array.prototype.constructor(1, 2);
+new Array(1, 2);
+Array(1, 2)[(1, 2)];
+```
 
-  ^ - оператор XOR
+45.:
 
-46. function F() {return F;}
-console.log( new F() instanceof F);
-console.log( new F() instanceof Function);
+```js
+let x = 5;
+console.log(x++);
+```
+
+Ответ: 5, т.к. инкремент происходит после выполнения операции вывода
+
+^ - оператор XOR
+
+46.:
+
+```js
+function F() {
+  return F;
+}
+console.log(new F() instanceof F);
+console.log(new F() instanceof Function);
+```
 
 Оператор instanceof проверяет, принадлежит ли объект к определённому классу.
 Другими словами, object instanceof constructor проверяет,
 присутствует ли объект constructor.prototype в цепочке прототипов object.
 
 47. Что такое ECMAScript?
-Ответ: Спецификация языка JavaScript.
+    Ответ: Спецификация языка JavaScript.
 
 48. Какие из этих вызовов синтаксически верно сгенерируют исключение?
 
-throw "Ошибка" *
-throw new Error("Ошибка") *
-throw { message: "Ошибка" } *
-throw Error("Ошибка") * 
-Ни один.
+```js
+throw "Ошибка" \*
+throw new Error("Ошибка") \*
+throw { message: "Ошибка" } \*
+throw Error("Ошибка") \*
+//Ни один
+```
 
 49. Какой оператор из этих выполняет не только математические операции?
 
-* 
-/
-+ //я думаю этот
--
->>>
+Ответ: только оператор +
 
-50. console.log([] + false - null + true)
+50.:
+
+```js
+console.log([] + false - null + true);
+```
 
 Ответ: NaN
 
 51. Сработает ли вызов функции до объявления в этом коде:
 
+```js
 sayHi();
 
 function sayHi() {
-  console.log("Hello")
+  console.log("Hello");
 }
+```
 
 Ответ: Да
 
 52. Что выведет этот код?
 
+```js
 f.call(f);
 
 function f() {
-  alert( this );
+  alert(this);
 }
+```
 
 Ответ: [Function: F] (Код функции F)
 
 53. Что выведет этот код?
 
+```js
 f.call(null);
 
 function f() {
-  alert( this );
+  alert(this);
 }
+```
 
-Ответ: null 
+Ответ: null
 
 54. Есть ли разница:
-!!(a && b)
-(a && b)
+
+```js
+!!(a && b)(a && b);
+```
 
 Ответ: Да, первый превращает результат условия в логический тип
-
 
 55. Чему равно 0 || 1 && 2 || 3?
 
@@ -421,178 +548,57 @@ function f() {
 
 Ответ: 12
 
-57. let obj = {'1': 0, 1: 1, 0: 2};
+57.:
 
-console.log(obj['1']);
+```js
+let obj = { 1: 0, 1: 1, 0: 2 };
+
+console.log(obj["1"]);
+```
 
 Ответ: 1
 
-58. console.log(true + false)
+58.:
+
+```js
+console.log(true + false);
+```
 
 Ответ: 1
 
-59. let a = new Array(1,2), b = new Array(3);
-console.log(a[0] + b[0])
+59.:
+
+```js
+let a = new Array(1, 2),
+  b = new Array(3);
+console.log(a[0] + b[0]);
+```
 
 Ответ: NaN
 
-*/
+60.:
 
-// let a = new Array(1, 2),
-//   b = new Array(3);
-// console.log(a[0] + b[0]);
+```js
+console.log("1"[0]);
+```
 
-// console.log(true + false);
-// console.log(typeof null);
+Ответ: 1
 
-// for (let i = 0; i < 10; i++) {
-//   console.log(i);
-// }
-// console.log(i);
+61.
 
-// console.log([] + 1 + 2);
+```js
+console.log(2 && 1 && null && 0 && undefined);
+```
 
-// console.log(1.15 + 2.3);
+Ответ: null
 
-// console.log(0 || (1 && 2) || 3);
+62. Какие вызовы parseInt возвратят число?
 
-// let a = 1,
-//   b = 2;
-// console.log(a && b, !!(a && b));
+```js
+parseInt("1px");
+parseInt("-1.2");
+parseInt("0 минут");
+parseInt("$1.2");
+```
 
-// f.call(null);
-
-// function f() {
-//   console.log(this);
-// }
-
-//sayHi();
-
-//function sayHi() {
-//  console.log("Hello")
-//}
-
-//console.log([] + false - null + true)
-
-//function F() {return F;}
-//console.log( new F() instanceof F);
-//console.log( new F() instanceof Function);
-
-//console.log(2^10);
-
-//let x = 5; console.log(x++);
-// console.log(str); // ?
-// let str = "Hello";
-// let f = (function (x) {
-//   console.log(x);
-// })
-// (
-//   (function () {
-//     f(1);
-//   })()
-// );
-
-// console.log(null + undefined);
-
-// function f() {
-//   let aa = 5;
-//   return new Function("b", "return aa + b");
-// }
-// console.log(f()(1));
-
-// let arr = [1, 2, 3];
-// arr.something = 5;
-// console.log(arr.something);
-
-// console.log(Math.sqrt(-1));
-
-// let b = [1, 2];
-// (function () {
-//   console.log(b);
-// })();
-
-// console.log(20e-1);
-// console.log((20e-1)["toString"](2));
-// console.log((20e-1).toString(2));
-
-// console.log(0 || "" || 2 || undefined || true || falsе);
-// let x = 5;
-// console.log(x++);
-// console.log(null == undefined)
-// function F() {}
-// console.log(F.prototype);
-// a = [1, 2, 3];
-// a = [1, 2, 3];
-// b = [1, 2, 3];
-
-// console.log(a == b);
-
-// let aa = { "a", "b" }
-// let aaa = ("a", "b");
-// let aaaa = ["a", "b"];
-// let aaaaa = "a,b".split(",");
-
-// console.log(a, aaa, aaaa, aaaaa);
-
-// let a = 1;
-// let b = {
-//   toString() {
-//     return "1";
-//   },
-// };
-// let c = 1;
-// console.log(a + b + c);
-
-// let f = function g() {
-//   return 23;
-// };
-// console.log(typeof g()); //undefined
-
-// console.log(null + { 0: 1 }[0] + [, [1]][1][0]);
-
-// for (var i = 0; i < 10; i++) {
-//   setTimeout(function () {
-//     console.log(i);
-//   }, 100);
-// }
-
-// function MyArray() {}
-// MyArray.prototype = [];
-
-// let arr = new MyArray();
-// arr.push(1, 2, 3);
-// console.log(arr.length);
-
-// try {
-// } catch {
-// } finally {
-// }
-
-// try {
-// } finally {
-// }
-
-// console.log(str);
-// var str = "Hello";
-
-// let obj = {
-//   0: 1,
-//   0: 2,
-// };
-// console.log(obj["0"] + obj[0]);
-// function User() {}
-// User.prototype = { admin: false };
-
-// let user = new User();
-// console.log(user.admin);
-
-// function User() {}
-// User.prototype = { admin: false };
-
-// let user = new User();
-
-// User.prototype = { admin: true };
-
-// console.log(user.admin);
-
-// console.log([] + 1 + 2);
+Ответ: 1, -1, 0, NaN, получается, первые 3
