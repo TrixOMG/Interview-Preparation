@@ -1,3 +1,5 @@
+## Just JS
+
 1. Язык JavaScript является подвидом языка Java - неверно.
 
 2. Что выведет код:
@@ -602,3 +604,19 @@ parseInt("$1.2");
 ```
 
 Ответ: 1, -1, 0, NaN, получается, первые 3
+
+## DOM Manipulation
+
+1. Как получить HTML-содержимое DOM-элемента elem?
+
+Ответ: elem.innerHTML
+
+2. Есть элемент <div id="elem"><input/></div>. На нём два обработчика:
+   Какой из них сработает раньше при клике на <input>?
+
+```js
+elem.addEventListener("click", handler1, false);
+elem.addEventListener("click", handler2, true);
+```
+
+Ответ: второй.
